@@ -1,0 +1,2 @@
+pyside2-uic -o AquaPilotUI.py AquaPlayerUI.ui
+pyside2-uic -o SensorDataPlotUI.py SensorDataPlotUI.ui
