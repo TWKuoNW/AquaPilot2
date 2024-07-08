@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'AquaPlayerUI_Version2.ui'
+## Form generated from reading UI file 'AquaPlayerUI.ui'
 ##
 ## Created by: Qt User Interface Compiler version 5.15.2
 ##
@@ -17,7 +17,7 @@ class Ui_AquaPlayer(object):
     def setupUi(self, AquaPlayer):
         if not AquaPlayer.objectName():
             AquaPlayer.setObjectName(u"AquaPlayer")
-        AquaPlayer.resize(1196, 921)
+        AquaPlayer.resize(1251, 938)
         self.centralwidget = QWidget(AquaPlayer)
         self.centralwidget.setObjectName(u"centralwidget")
         sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
@@ -25,58 +25,14 @@ class Ui_AquaPlayer(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.centralwidget.sizePolicy().hasHeightForWidth())
         self.centralwidget.setSizePolicy(sizePolicy)
-        self.centralwidget.setStyleSheet(u"QWidget {\n"
-"    background-color: #F1E1FF;\n"
-"}\n"
-"")
-        self.verticalLayout_7 = QVBoxLayout(self.centralwidget)
-        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
-        self.mainVerticalLayout = QVBoxLayout()
-        self.mainVerticalLayout.setObjectName(u"mainVerticalLayout")
-        self.functionBarHorizontalLayout = QHBoxLayout()
-        self.functionBarHorizontalLayout.setObjectName(u"functionBarHorizontalLayout")
-        self.homeFunPushButton = QPushButton(self.centralwidget)
-        self.homeFunPushButton.setObjectName(u"homeFunPushButton")
-
-        self.functionBarHorizontalLayout.addWidget(self.homeFunPushButton)
-
-        self.sensorFunPushButton = QPushButton(self.centralwidget)
-        self.sensorFunPushButton.setObjectName(u"sensorFunPushButton")
-
-        self.functionBarHorizontalLayout.addWidget(self.sensorFunPushButton)
-
-        self.deviceFunPushButton = QPushButton(self.centralwidget)
-        self.deviceFunPushButton.setObjectName(u"deviceFunPushButton")
-
-        self.functionBarHorizontalLayout.addWidget(self.deviceFunPushButton)
-
-        self.mapFunPushButton = QPushButton(self.centralwidget)
-        self.mapFunPushButton.setObjectName(u"mapFunPushButton")
-
-        self.functionBarHorizontalLayout.addWidget(self.mapFunPushButton)
-
-        self.horizontalSpacer_4 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
-
-        self.functionBarHorizontalLayout.addItem(self.horizontalSpacer_4)
-
-
-        self.mainVerticalLayout.addLayout(self.functionBarHorizontalLayout)
-
-        self.line_4 = QFrame(self.centralwidget)
-        self.line_4.setObjectName(u"line_4")
-        self.line_4.setFrameShape(QFrame.HLine)
-        self.line_4.setFrameShadow(QFrame.Sunken)
-
-        self.mainVerticalLayout.addWidget(self.line_4)
-
-        self.horizontalLayout_11 = QHBoxLayout()
-        self.horizontalLayout_11.setObjectName(u"horizontalLayout_11")
+        self.horizontalLayout_2 = QHBoxLayout(self.centralwidget)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
         self.line_9 = QFrame(self.centralwidget)
         self.line_9.setObjectName(u"line_9")
         self.line_9.setFrameShape(QFrame.VLine)
         self.line_9.setFrameShadow(QFrame.Sunken)
 
-        self.horizontalLayout_11.addWidget(self.line_9)
+        self.horizontalLayout_2.addWidget(self.line_9)
 
         self.verticalLayout_a = QVBoxLayout()
         self.verticalLayout_a.setObjectName(u"verticalLayout_a")
@@ -234,10 +190,6 @@ class Ui_AquaPlayer(object):
         self.txtName.setSizePolicy(sizePolicy3)
         self.txtName.setMinimumSize(QSize(0, 30))
         self.txtName.setMaximumSize(QSize(16777215, 30))
-        self.txtName.setStyleSheet(u"QLineEdit {\n"
-"    background-color: #FFFFFF;\n"
-"}\n"
-"")
 
         self.horizontalLayout_14.addWidget(self.txtName)
 
@@ -264,10 +216,6 @@ class Ui_AquaPlayer(object):
         self.txtIP.setSizePolicy(sizePolicy3)
         self.txtIP.setMinimumSize(QSize(0, 30))
         self.txtIP.setMaximumSize(QSize(16777215, 30))
-        self.txtIP.setStyleSheet(u"QLineEdit {\n"
-"    background-color: #FFFFFF;\n"
-"}\n"
-"")
 
         self.horizontalLayout.addWidget(self.txtIP)
 
@@ -548,18 +496,31 @@ class Ui_AquaPlayer(object):
 
         self.layout_A3.addLayout(self.ORPLayout)
 
+        self.horizontalLayout_data_plot = QHBoxLayout()
+        self.horizontalLayout_data_plot.setObjectName(u"horizontalLayout_data_plot")
+        self.btnStrPlot = QPushButton(self.centralwidget)
+        self.btnStrPlot.setObjectName(u"btnStrPlot")
+        self.btnStrPlot.setMinimumSize(QSize(100, 30))
+        self.btnStrPlot.setMaximumSize(QSize(10000, 30))
+
+        self.horizontalLayout_data_plot.addWidget(self.btnStrPlot)
+
+        self.horizontalLayout_data_plot.setStretch(0, 3)
+
+        self.layout_A3.addLayout(self.horizontalLayout_data_plot)
+
 
         self.verticalLayout_a.addLayout(self.layout_A3)
 
 
-        self.horizontalLayout_11.addLayout(self.verticalLayout_a)
+        self.horizontalLayout_2.addLayout(self.verticalLayout_a)
 
         self.line_10 = QFrame(self.centralwidget)
         self.line_10.setObjectName(u"line_10")
         self.line_10.setFrameShape(QFrame.VLine)
         self.line_10.setFrameShadow(QFrame.Sunken)
 
-        self.horizontalLayout_11.addWidget(self.line_10)
+        self.horizontalLayout_2.addWidget(self.line_10)
 
         self.verticalLayout_b = QVBoxLayout()
         self.verticalLayout_b.setObjectName(u"verticalLayout_b")
@@ -607,14 +568,14 @@ class Ui_AquaPlayer(object):
 
         self.verticalLayout_b.setStretch(0, 1)
 
-        self.horizontalLayout_11.addLayout(self.verticalLayout_b)
+        self.horizontalLayout_2.addLayout(self.verticalLayout_b)
 
         self.line_11 = QFrame(self.centralwidget)
         self.line_11.setObjectName(u"line_11")
         self.line_11.setFrameShape(QFrame.VLine)
         self.line_11.setFrameShadow(QFrame.Sunken)
 
-        self.horizontalLayout_11.addWidget(self.line_11)
+        self.horizontalLayout_2.addWidget(self.line_11)
 
         self.verticalLayout_c = QVBoxLayout()
         self.verticalLayout_c.setObjectName(u"verticalLayout_c")
@@ -633,7 +594,6 @@ class Ui_AquaPlayer(object):
 
         self.cbxQuality_2 = QComboBox(self.centralwidget)
         self.cbxQuality_2.setObjectName(u"cbxQuality_2")
-        self.cbxQuality_2.setMinimumSize(QSize(85, 0))
 
         self.horizontalLayout_5.addWidget(self.cbxQuality_2)
 
@@ -659,32 +619,16 @@ class Ui_AquaPlayer(object):
         self.labVideo2.setAutoFillBackground(False)
         self.labVideo2.setAlignment(Qt.AlignRight|Qt.AlignTop|Qt.AlignTrailing)
 
-        self.verticalLayout_c.addWidget(self.labVideo2, 0, Qt.AlignHCenter|Qt.AlignVCenter)
+        self.verticalLayout_c.addWidget(self.labVideo2, 0, Qt.AlignTop)
 
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.btnVideo2TurnLeft = QPushButton(self.centralwidget)
-        self.btnVideo2TurnLeft.setObjectName(u"btnVideo2TurnLeft")
-        self.btnVideo2TurnLeft.setMinimumSize(QSize(55, 0))
-        self.btnVideo2TurnLeft.setMaximumSize(QSize(55, 16777215))
-
-        self.horizontalLayout_6.addWidget(self.btnVideo2TurnLeft)
-
-        self.btnVideo2TurnRight = QPushButton(self.centralwidget)
-        self.btnVideo2TurnRight.setObjectName(u"btnVideo2TurnRight")
-        self.btnVideo2TurnRight.setMinimumSize(QSize(55, 0))
-        self.btnVideo2TurnRight.setMaximumSize(QSize(55, 16777215))
-
-        self.horizontalLayout_6.addWidget(self.btnVideo2TurnRight)
-
         self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_6.addItem(self.horizontalSpacer_3)
 
         self.cbxQuality_3 = QComboBox(self.centralwidget)
         self.cbxQuality_3.setObjectName(u"cbxQuality_3")
-        self.cbxQuality_3.setMinimumSize(QSize(85, 0))
-        self.cbxQuality_3.setMaximumSize(QSize(85, 16777215))
 
         self.horizontalLayout_6.addWidget(self.cbxQuality_3)
 
@@ -705,10 +649,6 @@ class Ui_AquaPlayer(object):
 
         self.pteComm = QPlainTextEdit(self.centralwidget)
         self.pteComm.setObjectName(u"pteComm")
-        self.pteComm.setStyleSheet(u"QPlainTextEdit {\n"
-"    background-color: #FFFFFF;\n"
-"}\n"
-"")
 
         self.verticalLayout_c.addWidget(self.pteComm)
 
@@ -717,10 +657,6 @@ class Ui_AquaPlayer(object):
         self.lineEditSend = QLineEdit(self.centralwidget)
         self.lineEditSend.setObjectName(u"lineEditSend")
         self.lineEditSend.setMinimumSize(QSize(0, 30))
-        self.lineEditSend.setStyleSheet(u"QLineEdit {\n"
-"    background-color: #FFFFFF;\n"
-"}\n"
-"")
 
         self.horizontalLayout_7.addWidget(self.lineEditSend)
 
@@ -738,29 +674,25 @@ class Ui_AquaPlayer(object):
         self.verticalLayout_c.addWidget(self.btnClear)
 
 
-        self.horizontalLayout_11.addLayout(self.verticalLayout_c)
+        self.horizontalLayout_2.addLayout(self.verticalLayout_c)
 
         self.line_14 = QFrame(self.centralwidget)
         self.line_14.setObjectName(u"line_14")
         self.line_14.setFrameShape(QFrame.VLine)
         self.line_14.setFrameShadow(QFrame.Sunken)
 
-        self.horizontalLayout_11.addWidget(self.line_14)
+        self.horizontalLayout_2.addWidget(self.line_14)
 
-        self.horizontalLayout_11.setStretch(0, 1)
-        self.horizontalLayout_11.setStretch(1, 1)
-        self.horizontalLayout_11.setStretch(2, 1)
-        self.horizontalLayout_11.setStretch(3, 3)
-        self.horizontalLayout_11.setStretch(4, 1)
-        self.horizontalLayout_11.setStretch(5, 1)
-        self.horizontalLayout_11.setStretch(6, 1)
-
-        self.mainVerticalLayout.addLayout(self.horizontalLayout_11)
-
-
-        self.verticalLayout_7.addLayout(self.mainVerticalLayout)
-
+        self.horizontalLayout_2.setStretch(1, 1)
+        self.horizontalLayout_2.setStretch(3, 3)
         AquaPlayer.setCentralWidget(self.centralwidget)
+        self.menubar = QMenuBar(AquaPlayer)
+        self.menubar.setObjectName(u"menubar")
+        self.menubar.setGeometry(QRect(0, 0, 1251, 25))
+        AquaPlayer.setMenuBar(self.menubar)
+        self.statusbar = QStatusBar(AquaPlayer)
+        self.statusbar.setObjectName(u"statusbar")
+        AquaPlayer.setStatusBar(self.statusbar)
 
         self.retranslateUi(AquaPlayer)
 
@@ -769,10 +701,6 @@ class Ui_AquaPlayer(object):
 
     def retranslateUi(self, AquaPlayer):
         AquaPlayer.setWindowTitle(QCoreApplication.translate("AquaPlayer", u"\u667a\u6167\u990a\u6b96\u5100\u9336\u677f", None))
-        self.homeFunPushButton.setText(QCoreApplication.translate("AquaPlayer", u"\u9996\u9801", None))
-        self.sensorFunPushButton.setText(QCoreApplication.translate("AquaPlayer", u"\u611f\u6e2c\u5668", None))
-        self.deviceFunPushButton.setText(QCoreApplication.translate("AquaPlayer", u"\u8a2d\u5099", None))
-        self.mapFunPushButton.setText(QCoreApplication.translate("AquaPlayer", u"\u5730\u5716", None))
         self.labTitle.setText(QCoreApplication.translate("AquaPlayer", u"\u990a\u6b96\u5834\u72c0\u614b", None))
         self.labNameTitle.setText(QCoreApplication.translate("AquaPlayer", u"\u540d\u7a31", None))
         self.labName.setText(QCoreApplication.translate("AquaPlayer", u"\u672a\u77e5", None))
@@ -801,6 +729,7 @@ class Ui_AquaPlayer(object):
         self.labPHValue.setText(QCoreApplication.translate("AquaPlayer", u"0.0", None))
         self.labORP.setText(QCoreApplication.translate("AquaPlayer", u"\u6c34\u6eab", None))
         self.labORPValue.setText(QCoreApplication.translate("AquaPlayer", u"0.0", None))
+        self.btnStrPlot.setText(QCoreApplication.translate("AquaPlayer", u"\u555f\u52d5\u7dda\u5716", None))
         self.labVideo0.setText(QCoreApplication.translate("AquaPlayer", u"video0", None))
         self.cbxQuality.setItemText(0, QCoreApplication.translate("AquaPlayer", u"1920*1080", None))
         self.cbxQuality.setItemText(1, QCoreApplication.translate("AquaPlayer", u"1280*1024", None))
@@ -811,8 +740,6 @@ class Ui_AquaPlayer(object):
         self.labVideo1.setText(QCoreApplication.translate("AquaPlayer", u"Video1", None))
         self.btnStrVideo1.setText(QCoreApplication.translate("AquaPlayer", u"\u958b\u59cb", None))
         self.labVideo2.setText(QCoreApplication.translate("AquaPlayer", u"Video2", None))
-        self.btnVideo2TurnLeft.setText(QCoreApplication.translate("AquaPlayer", u"L", None))
-        self.btnVideo2TurnRight.setText(QCoreApplication.translate("AquaPlayer", u"R", None))
         self.btnStrVideo2.setText(QCoreApplication.translate("AquaPlayer", u"\u958b\u59cb", None))
         self.btnSend.setText(QCoreApplication.translate("AquaPlayer", u"\u767c\u9001", None))
         self.btnClear.setText(QCoreApplication.translate("AquaPlayer", u"\u6e05\u9664", None))

@@ -18564,3 +18564,4 @@
 2024-05-31 01:24:59, AirTemperature: 32.0C, AirHumidity: 51.7%, WaterTemperature: 26C, WaterDO: 8.95mg/L 
 2024-05-31 01:25:59, AirTemperature: 32.0C, AirHumidity: 51.7%, WaterTemperature: 26C, WaterDO: 9.45mg/L 
 2024-05-31 01:26:59, AirTemperature: 32.0C, AirHumidity: 51.8%, WaterTemperature: 26C, WaterDO: 8.7mg/L 
+2024-05-31 01:27:59, AirTemperature: 32.0C, AirHumidity: 51.8%, WaterTemperature: 26C, WaterDO: 8.7mg/L 

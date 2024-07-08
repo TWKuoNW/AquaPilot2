@@ -13,7 +13,7 @@ import threading
 class QMainWindow(QMainWindow): # 覆寫QMainWindow
     def __init__(self):
         super().__init__() # 呼叫父類別的建構函式
-        self.setStyleSheet("background-color: #E0E0E0;") # 設定背景顏色
+        # self.setStyleSheet("background-color: #E0E0E0;") # 設定背景顏色
         self.setWindowIcon(QIcon("AquaPilotPC/img/logo3.png")) # 設定視窗icon
         self.connector = None # 初始化connector
 
@@ -43,17 +43,23 @@ class MyApp():
 
         self.isCapturingVideo0 = False # 初始化isCapturing為False
         self.isCapturingVideo1 = False # 初始化isCapturing為False
+        self.isCapturingVideo2 = False # 初始化isCapturing為False
         self.connector = None # 初始化connector為None
         self.cap0 = None # 初始化cap0為None
         self.cap1 = None # 初始化cap1為None
+        self.cap2 = None # 初始化cap1為None
         
         # 連接button與函數
         self.ui.btnStrVideo0.clicked.connect(self.on_video0_button_clicked) 
         self.ui.btnStrVideo1.clicked.connect(self.on_video1_button_clicked) 
+        self.ui.btnStrVideo2.clicked.connect(self.on_video2_button_clicked) 
         self.ui.btnConn.clicked.connect(self.on_connMod_button_clicked) 
         self.ui.btnClear.clicked.connect(self.on_btnClear_button_clicked)
         self.ui.btnSend.clicked.connect(self.on_btnSend_button_clicked)
-        self.ui.btnStrPlot.clicked.connect(self.on_plot_button_clicked)
+
+        self.ui.sensorFunPushButton.clicked.connect(self.on_sensor_button_clicked)
+        self.ui.deviceFunPushButton.clicked.connect(self.on_device_button_clicked)
+        self.ui.mapFunPushButton.clicked.connect(self.on_map_button_clicked)
         
         # 連接checkbox與函數
         self.ui.cbProbioticSprayer.stateChanged.connect(self.on_probioticSprayer_checkbox_changed)
@@ -66,6 +72,10 @@ class MyApp():
         # 初始化video1
         self.video1 = QTimer()
         self.video1.timeout.connect(self.updateFrame1)
+
+        # 初始化video2
+        self.video2 = QTimer()
+        self.video2.timeout.connect(self.updateFrame2)
 
         self.ui.pteComm.setPlainText("-------------------------命令視窗-------------------------")
     
@@ -121,6 +131,17 @@ class MyApp():
             
             p = convertToQtFormat.scaled(320, 240, aspectRatioMode=QtCore.Qt.KeepAspectRatio) # 保持長寬比
             self.ui.labVideo1.setPixmap(QPixmap.fromImage(p)) # 顯示畫面
+
+    def updateFrame2(self): # 更新相機畫面
+        ret, frame = self.cap2.read()  
+        if ret:
+            rgbImage = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+            h, w, ch = rgbImage.shape # 高、寬、通道數
+            bytesPerLine = ch * w # 每行的字節數
+            convertToQtFormat = QImage(rgbImage.data, w, h, bytesPerLine, QImage.Format_RGB888) # 轉換成QImage格式
+            
+            p = convertToQtFormat.scaled(320, 240, aspectRatioMode=QtCore.Qt.KeepAspectRatio) # 保持長寬比
+            self.ui.labVideo2.setPixmap(QPixmap.fromImage(p)) # 顯示畫面
     
     def on_video0_button_clicked(self): # 開啟/關閉相機
         if(not self.cap0 == None):
@@ -160,6 +181,20 @@ class MyApp():
                 self.isCapturingVideo1 = True
                 self.ui.btnStrVideo1.setText("關閉")
                 self.ui.pteComm.appendPlainText("Video1相機 開啟")
+
+    def on_video2_button_clicked(self): # 開啟/關閉相機
+        if(not self.cap2 == None):
+            if self.isCapturingVideo2:
+                self.video2.stop()
+                self.isCapturingVideo2 = False
+                self.ui.labVideo2.setText("video2")
+                self.ui.btnStrVideo2.setText("開始")
+                self.ui.pteComm.appendPlainText("Video2相機 關閉")
+            else:
+                self.video2.start(20)
+                self.isCapturingVideo2 = True
+                self.ui.btnStrVideo2.setText("關閉")
+                self.ui.pteComm.appendPlainText("Video2相機 開啟")
     
     def send_autoFeeder_command_to_connector(self, command): # 向Connector發送益生菌噴灑器命令
         if(command == 0):
@@ -219,9 +254,11 @@ class MyApp():
         self.ui.labIP.setText(str(ip))
         video0_url = 'http://' + str(ip) + ':8001/video'
         video1_url = 'http://' + str(ip) + ':8000/video'
+        video2_url = 'http://' + str(ip) + ':8002/video'
         # print(video0_url)
         self.cap0 = cv2.VideoCapture(video0_url)
         self.cap1 = cv2.VideoCapture(video1_url)
+        self.cap2 = cv2.VideoCapture(video2_url)
         # print(name, " ", ip)
         self.ui.pteComm.appendPlainText("連接養殖場伺服器...")
         try:
@@ -249,9 +286,15 @@ class MyApp():
     def on_btnClear_button_clicked(self): # 清除命令視窗
         self.ui.pteComm.clear()
 
-    def on_plot_button_clicked(self):
+    def on_sensor_button_clicked(self):
         self.sensorDataPlot = sensorDataPlot()
         self.sensorDataPlot.show()
+
+    def on_device_button_clicked(self):
+        print("diveceWidget")
+
+    def on_map_button_clicked(self):
+        print("mapWidget")
 
 if __name__ == "__main__":
     my_app = MyApp()

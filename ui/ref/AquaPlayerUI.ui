@@ -82,8 +82,15 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_16">
           <item>
+           <widget class="Line" name="line_4">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
            <layout class="QVBoxLayout" name="verticalLayout_3">
-            <item alignment="Qt::AlignHCenter">
+            <item>
              <widget class="QLabel" name="labNameTitle">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -116,7 +123,7 @@
               </property>
              </widget>
             </item>
-            <item alignment="Qt::AlignHCenter">
+            <item>
              <widget class="QLabel" name="labName">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -152,7 +159,7 @@
           </item>
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_2">
-            <item alignment="Qt::AlignHCenter">
+            <item>
              <widget class="QLabel" name="labIPTitle">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -185,7 +192,7 @@
               </property>
              </widget>
             </item>
-            <item alignment="Qt::AlignHCenter">
+            <item>
              <widget class="QLabel" name="labIP">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -227,7 +234,7 @@
           </item>
           <item>
            <layout class="QVBoxLayout" name="verticalLayout_4">
-            <item alignment="Qt::AlignHCenter">
+            <item>
              <widget class="QLabel" name="labStatusTitle">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -260,7 +267,7 @@
               </property>
              </widget>
             </item>
-            <item alignment="Qt::AlignHCenter">
+            <item>
              <widget class="QLabel" name="labStatus">
               <property name="sizePolicy">
                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -290,7 +297,7 @@
          </layout>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_14" stretch="1,4">
+         <layout class="QHBoxLayout" name="horizontalLayout_14">
           <item alignment="Qt::AlignHCenter">
            <widget class="QLabel" name="labNameKeyinTitle">
             <property name="sizePolicy">
@@ -307,7 +314,7 @@
             </property>
             <property name="maximumSize">
              <size>
-              <width>40</width>
+              <width>16777215</width>
               <height>40</height>
              </size>
             </property>
@@ -338,18 +345,12 @@
               <height>30</height>
              </size>
             </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
-              <height>30</height>
-             </size>
-            </property>
            </widget>
           </item>
          </layout>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,4">
+         <layout class="QHBoxLayout" name="horizontalLayout">
           <item alignment="Qt::AlignHCenter">
            <widget class="QLabel" name="labIPKeyinTitle">
             <property name="sizePolicy">
@@ -366,7 +367,7 @@
             </property>
             <property name="maximumSize">
              <size>
-              <width>40</width>
+              <width>16777215</width>
               <height>40</height>
              </size>
             </property>
@@ -394,12 +395,6 @@
             <property name="minimumSize">
              <size>
               <width>0</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>16777215</width>
               <height>30</height>
              </size>
             </property>
@@ -432,8 +427,8 @@
             </property>
             <property name="maximumSize">
              <size>
-              <width>100</width>
-              <height>30</height>
+              <width>16777215</width>
+              <height>40</height>
              </size>
             </property>
             <property name="text">
@@ -447,18 +442,6 @@
       </item>
       <item>
        <widget class="Line" name="line_3">
-        <property name="minimumSize">
-         <size>
-          <width>220</width>
-          <height>0</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>16777215</height>
-         </size>
-        </property>
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
@@ -498,8 +481,8 @@
          </layout>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="2,0,1,1,1">
-          <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+         <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="2,2,1">
+          <item>
            <widget class="QLabel" name="labDev1">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -510,32 +493,13 @@
             <property name="minimumSize">
              <size>
               <width>100</width>
-              <height>70</height>
+              <height>60</height>
              </size>
-            </property>
-            <property name="layoutDirection">
-             <enum>Qt::LeftToRight</enum>
             </property>
             <property name="text">
              <string>自動投餵器</string>
             </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
            </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_9">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
           </item>
           <item>
            <widget class="QLabel" name="labDev1Status">
@@ -547,30 +511,14 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>50</width>
+              <width>40</width>
               <height>0</height>
              </size>
             </property>
             <property name="text">
              <string>關閉</string>
             </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
            </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_7">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>10</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
           </item>
           <item>
            <widget class="QCheckBox" name="cbAutoFeeder">
@@ -582,8 +530,8 @@
          </layout>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="2,0,1,1,1">
-          <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+         <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="2,2,1">
+          <item>
            <widget class="QLabel" name="labDev2">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -594,29 +542,13 @@
             <property name="minimumSize">
              <size>
               <width>100</width>
-              <height>70</height>
+              <height>60</height>
              </size>
             </property>
             <property name="text">
              <string>益生菌噴灑器</string>
             </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
            </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_10">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
           </item>
           <item>
            <widget class="QLabel" name="labDev2Status">
@@ -628,7 +560,7 @@
             </property>
             <property name="minimumSize">
              <size>
-              <width>50</width>
+              <width>40</width>
               <height>0</height>
              </size>
             </property>
@@ -638,23 +570,7 @@
             <property name="text">
              <string>關閉</string>
             </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
            </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_8">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>10</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
           </item>
           <item>
            <widget class="QCheckBox" name="cbProbioticSprayer">
@@ -711,7 +627,7 @@
         </item>
         <item>
          <layout class="QHBoxLayout" name="tempLayout" stretch="1,1">
-          <item alignment="Qt::AlignHCenter|Qt::AlignVCenter">
+          <item alignment="Qt::AlignVCenter">
            <widget class="QLabel" name="labTemp">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -725,31 +641,12 @@
               <height>60</height>
              </size>
             </property>
-            <property name="font">
-             <font>
-              <weight>50</weight>
-              <italic>false</italic>
-              <bold>false</bold>
-              <strikeout>false</strikeout>
-              <stylestrategy>PreferDefault</stylestrategy>
-              <kerning>true</kerning>
-             </font>
-            </property>
-            <property name="cursor">
-             <cursorShape>ArrowCursor</cursorShape>
-            </property>
-            <property name="mouseTracking">
-             <bool>false</bool>
-            </property>
-            <property name="tabletTracking">
-             <bool>true</bool>
-            </property>
             <property name="text">
              <string>溫度</string>
             </property>
            </widget>
           </item>
-          <item alignment="Qt::AlignHCenter">
+          <item>
            <widget class="QLabel" name="labTempValue">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -766,7 +663,7 @@
         </item>
         <item>
          <layout class="QHBoxLayout" name="humLayout" stretch="1,1">
-          <item alignment="Qt::AlignHCenter">
+          <item>
            <widget class="QLabel" name="labHum">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -785,7 +682,7 @@
             </property>
            </widget>
           </item>
-          <item alignment="Qt::AlignHCenter">
+          <item>
            <widget class="QLabel" name="labHumValue">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -802,7 +699,7 @@
         </item>
         <item>
          <layout class="QHBoxLayout" name="DOLayout" stretch="1,1">
-          <item alignment="Qt::AlignHCenter">
+          <item>
            <widget class="QLabel" name="labDO">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -821,7 +718,7 @@
             </property>
            </widget>
           </item>
-          <item alignment="Qt::AlignHCenter">
+          <item>
            <widget class="QLabel" name="labDOValue">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -838,7 +735,7 @@
         </item>
         <item>
          <layout class="QHBoxLayout" name="pHLayout" stretch="1,1">
-          <item alignment="Qt::AlignHCenter">
+          <item>
            <widget class="QLabel" name="labPH">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -857,7 +754,7 @@
             </property>
            </widget>
           </item>
-          <item alignment="Qt::AlignHCenter">
+          <item>
            <widget class="QLabel" name="labPHValue">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -873,9 +770,9 @@
          </layout>
         </item>
         <item>
-         <layout class="QHBoxLayout" name="ORPLayout" stretch="0,1">
-          <item alignment="Qt::AlignHCenter">
-           <widget class="QLabel" name="labORP">
+         <layout class="QHBoxLayout" name="ORPLayout" stretch="1,1">
+          <item>
+           <widget class="QLabel" name="labORPValue">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>1</horstretch>
@@ -889,12 +786,12 @@
              </size>
             </property>
             <property name="text">
-             <string>水溫</string>
+             <string>ORP</string>
             </property>
            </widget>
           </item>
-          <item alignment="Qt::AlignHCenter">
-           <widget class="QLabel" name="labORPValue">
+          <item>
+           <widget class="QLabel" name="labORP">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>3</horstretch>
@@ -903,29 +800,6 @@
             </property>
             <property name="text">
              <string>0.0</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
-        </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_data_plot" stretch="3">
-          <item>
-           <widget class="QPushButton" name="btnStrPlot">
-            <property name="minimumSize">
-             <size>
-              <width>100</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="maximumSize">
-             <size>
-              <width>10000</width>
-              <height>30</height>
-             </size>
-            </property>
-            <property name="text">
-             <string>啟動線圖</string>
             </property>
            </widget>
           </item>
@@ -1073,7 +947,7 @@
          </spacer>
         </item>
         <item>
-         <widget class="QComboBox" name="cbxQuality_2"/>
+         <widget class="QComboBox" name="comboBox"/>
         </item>
         <item>
          <widget class="QPushButton" name="btnStrVideo1">
@@ -1092,7 +966,7 @@
        </widget>
       </item>
       <item alignment="Qt::AlignTop">
-       <widget class="QLabel" name="labVideo2">
+       <widget class="QLabel" name="label">
         <property name="minimumSize">
          <size>
           <width>320</width>
@@ -1129,10 +1003,10 @@
          </spacer>
         </item>
         <item>
-         <widget class="QComboBox" name="cbxQuality_3"/>
+         <widget class="QComboBox" name="comboBox_2"/>
         </item>
         <item>
-         <widget class="QPushButton" name="btnStrVideo2">
+         <widget class="QPushButton" name="pushButton_2">
           <property name="text">
            <string>開始</string>
           </property>

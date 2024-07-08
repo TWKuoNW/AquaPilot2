@@ -633,7 +633,6 @@ class Ui_AquaPlayer(object):
 
         self.cbxQuality_2 = QComboBox(self.centralwidget)
         self.cbxQuality_2.setObjectName(u"cbxQuality_2")
-        self.cbxQuality_2.setMinimumSize(QSize(85, 0))
 
         self.horizontalLayout_5.addWidget(self.cbxQuality_2)
 
@@ -659,32 +658,16 @@ class Ui_AquaPlayer(object):
         self.labVideo2.setAutoFillBackground(False)
         self.labVideo2.setAlignment(Qt.AlignRight|Qt.AlignTop|Qt.AlignTrailing)
 
-        self.verticalLayout_c.addWidget(self.labVideo2, 0, Qt.AlignHCenter|Qt.AlignVCenter)
+        self.verticalLayout_c.addWidget(self.labVideo2, 0, Qt.AlignTop)
 
         self.horizontalLayout_6 = QHBoxLayout()
         self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.btnVideo2TurnLeft = QPushButton(self.centralwidget)
-        self.btnVideo2TurnLeft.setObjectName(u"btnVideo2TurnLeft")
-        self.btnVideo2TurnLeft.setMinimumSize(QSize(55, 0))
-        self.btnVideo2TurnLeft.setMaximumSize(QSize(55, 16777215))
-
-        self.horizontalLayout_6.addWidget(self.btnVideo2TurnLeft)
-
-        self.btnVideo2TurnRight = QPushButton(self.centralwidget)
-        self.btnVideo2TurnRight.setObjectName(u"btnVideo2TurnRight")
-        self.btnVideo2TurnRight.setMinimumSize(QSize(55, 0))
-        self.btnVideo2TurnRight.setMaximumSize(QSize(55, 16777215))
-
-        self.horizontalLayout_6.addWidget(self.btnVideo2TurnRight)
-
         self.horizontalSpacer_3 = QSpacerItem(40, 20, QSizePolicy.Expanding, QSizePolicy.Minimum)
 
         self.horizontalLayout_6.addItem(self.horizontalSpacer_3)
 
         self.cbxQuality_3 = QComboBox(self.centralwidget)
         self.cbxQuality_3.setObjectName(u"cbxQuality_3")
-        self.cbxQuality_3.setMinimumSize(QSize(85, 0))
-        self.cbxQuality_3.setMaximumSize(QSize(85, 16777215))
 
         self.horizontalLayout_6.addWidget(self.cbxQuality_3)
 
@@ -811,8 +794,6 @@ class Ui_AquaPlayer(object):
         self.labVideo1.setText(QCoreApplication.translate("AquaPlayer", u"Video1", None))
         self.btnStrVideo1.setText(QCoreApplication.translate("AquaPlayer", u"\u958b\u59cb", None))
         self.labVideo2.setText(QCoreApplication.translate("AquaPlayer", u"Video2", None))
-        self.btnVideo2TurnLeft.setText(QCoreApplication.translate("AquaPlayer", u"L", None))
-        self.btnVideo2TurnRight.setText(QCoreApplication.translate("AquaPlayer", u"R", None))
         self.btnStrVideo2.setText(QCoreApplication.translate("AquaPlayer", u"\u958b\u59cb", None))
         self.btnSend.setText(QCoreApplication.translate("AquaPlayer", u"\u767c\u9001", None))
         self.btnClear.setText(QCoreApplication.translate("AquaPlayer", u"\u6e05\u9664", None))

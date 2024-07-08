@@ -1,2 +1,2 @@
-pyside2-uic -o AquaPilotUI.py AquaPlayerUI.ui
+pyside2-uic -o ui/AquaPilotUI.py ui/AquaPlayerUI_Version2.ui
 pyside2-uic -o SensorDataPlotUI.py SensorDataPlotUI.ui
