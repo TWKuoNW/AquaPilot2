@@ -32,14 +32,9 @@ class MyApp():
     def __init__(self):
         self.app = QApplication([]) # 創建應用程式
         self.window = QMainWindow() # 創建視窗
-        self.window.setStyleSheet("background-color: #F1E1FF;") # 設定背景顏色
 
         self.ui = Ui_AquaPlayer() # 創建UI
         self.ui.setupUi(self.window) # 設定UI
-        self.ui.txtName.setStyleSheet("background-color: white;") # 設定背景顏色
-        self.ui.txtIP.setStyleSheet("background-color: white;") # 設定背景顏色
-        self.ui.pteComm.setStyleSheet("background-color: white;") # 設定背景顏色
-        self.ui.lineEditSend.setStyleSheet("background-color: white;") # 設定背景顏色
 
         self.isCapturingVideo0 = False # 初始化isCapturing為False
         self.isCapturingVideo1 = False # 初始化isCapturing為False
@@ -65,6 +60,9 @@ class MyApp():
         self.ui.cbProbioticSprayer.stateChanged.connect(self.on_probioticSprayer_checkbox_changed)
         self.ui.cbAutoFeeder.stateChanged.connect(self.on_autofeeder_checkbox_changed)
 
+        self.ui.btnVideo2TurnRight.clicked.connect(self.on_btnVideo2TurnRight_button_clicked)
+        self.ui.btnVideo2TurnLeft.clicked.connect(self.on_btnVideo2TurnLeft_button_clicked)
+
         # 初始化video0
         self.video0 = QTimer()
         self.video0.timeout.connect(self.updateFrame0)
@@ -82,6 +80,38 @@ class MyApp():
     def run(self): # 執行應用程式，於程式啟動時執行
         self.window.show()
         self.app.exec_()
+
+    def on_connMod_button_clicked(self): # 連接模式
+        port = 9999
+        name = self.ui.txtName.text()
+        ip = self.ui.txtIP.text()
+
+        self.ui.labName.setText(str(name))
+        self.ui.labIP.setText(str(ip))
+        video0_url = 'http://' + str(ip) + ':8001/video'
+        video1_url = 'http://' + str(ip) + ':8000/video'
+        video2_url = 'http://' + str(ip) + ':8002/video'
+        # print(video0_url)
+        self.cap0 = cv2.VideoCapture(video0_url)
+        self.cap1 = cv2.VideoCapture(video1_url)
+        self.cap2 = cv2.VideoCapture(video2_url)
+        # print(name, " ", ip)
+        self.ui.pteComm.appendPlainText("連接養殖場伺服器...")
+        try:
+            self.connector = Connector(ip, port)
+            self.window.add_connector(self.connector) # 將connector加入到window
+            self.connector.start()
+            self.ui.labStatus.setText("已連接")
+            self.ui.pteComm.appendPlainText("成功連接伺服器")
+            self.update_sensorvalue = QTimer()
+            self.update_sensorvalue.timeout.connect(self.updateSensorValue)
+            self.update_sensorvalue.start(1000)
+        except ConnectionRefusedError:
+            self.ui.pteComm.appendPlainText("無法連線，因為目標電腦拒絕連線")
+        except OSError:
+            self.ui.pteComm.appendPlainText("內容中所要求的位址不正確。")
+        except Exception as e:
+            self.ui.pteComm.appendPlainText(f"發生異常: {e}")
 
     def updateSensorValue(self): # 更新感測器數值
         temp = self.connector.getTemp()
@@ -245,38 +275,6 @@ class MyApp():
         except AttributeError:
             self.ui.pteComm.appendPlainText("尚未開啟連線")
     
-    def on_connMod_button_clicked(self): # 連接模式
-        port = 9999
-        name = self.ui.txtName.text()
-        ip = self.ui.txtIP.text()
-
-        self.ui.labName.setText(str(name))
-        self.ui.labIP.setText(str(ip))
-        video0_url = 'http://' + str(ip) + ':8001/video'
-        video1_url = 'http://' + str(ip) + ':8000/video'
-        video2_url = 'http://' + str(ip) + ':8002/video'
-        # print(video0_url)
-        self.cap0 = cv2.VideoCapture(video0_url)
-        self.cap1 = cv2.VideoCapture(video1_url)
-        self.cap2 = cv2.VideoCapture(video2_url)
-        # print(name, " ", ip)
-        self.ui.pteComm.appendPlainText("連接養殖場伺服器...")
-        try:
-            self.connector = Connector(ip, port)
-            self.window.add_connector(self.connector) # 將connector加入到window
-            self.connector.start()
-            self.ui.labStatus.setText("已連接")
-            self.ui.pteComm.appendPlainText("成功連接伺服器")
-            self.update_sensorvalue = QTimer()
-            self.update_sensorvalue.timeout.connect(self.updateSensorValue)
-            self.update_sensorvalue.start(1000)
-        except ConnectionRefusedError:
-            self.ui.pteComm.appendPlainText("無法連線，因為目標電腦拒絕連線")
-        except OSError:
-            self.ui.pteComm.appendPlainText("內容中所要求的位址不正確。")
-        except Exception as e:
-            self.ui.pteComm.appendPlainText(f"發生異常: {e}")
-            
     def on_btnSend_button_clicked(self): # 發送命令
         self.connector.send_command(self.ui.lineEditSend.text())
         printSendCommand = "向伺服器發送->" + self.ui.lineEditSend.text()
@@ -295,6 +293,14 @@ class MyApp():
 
     def on_map_button_clicked(self):
         print("mapWidget")
+
+    def on_btnVideo2TurnRight_button_clicked(self):
+        print("TurnRight")
+        self.connector.send_camera_control_command(1)
+
+    def on_btnVideo2TurnLeft_button_clicked(self):
+        print("TurnLeft")
+        self.connector.send_camera_control_command(-1)
 
 if __name__ == "__main__":
     my_app = MyApp()

@@ -100,15 +100,31 @@ class Connector(threading.Thread): # 建立一個連接器的class
         else:
             pass
 
+    def send_camera_control_command(self, command):
+        if(command == 1):
+            command = "TurnRight"
+            self.client_socket.sendall(command.encode('utf-8'))
+        elif(command == -1):
+            command = "TurnLeft"
+            self.client_socket.sendall(command.encode('utf-8'))
+        else:
+            pass
+
     def send_command(self, command):
-        self.client_socket.sendall(command.encode('utf-8'))
+        self.client_socket.send(command.encode('utf-8'))
 
 # 使用示例
 if __name__ == "__main__":
-    host = "192.168.0.100"
+    host = "100.81.241.109"
     port = 9999
     connector = Connector(host, port)
     connector.start()
-
+    print("start")
+    time.sleep(1)
+    connector.send_command("Hello")
+    print("send Hello")
+    time.sleep(1)
+    connector.send_command("World")
+    print("send World")
     time.sleep(5)
     connector.stop()
